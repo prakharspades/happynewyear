@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year, My Beloved!</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff6a00, #ffcc00);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            animation: fadeIn 2s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card h1 {
+            font-size: 36px;
+            color: #ff6a00;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .card p {
+            font-size: 20px;
+            color: #333;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .card .heart {
+            font-size: 40px;
+            color: #ff6a00;
+            margin-top: 20px;
+        }
+
+        .card .btn {
+            background-color: #ff6a00;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .card .btn:hover {
+            background-color: #ffcc00;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Floating flowers animation */
+        .flowers {
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background-image: url('https://cdn.pixabay.com/photo/2017/08/30/02/59/sunflower-2690059_960_720.png');
+            background-size: cover;
+            animation: float 10s infinite linear;
+        }
+
+        .flowers:nth-child(2) {
+            top: -80px;
+            left: 150px;
+            animation-duration: 12s;
+        }
+
+        .flowers:nth-child(3) {
+            top: 150px;
+            left: -150px;
+            animation-duration: 8s;
+        }
+
+        .flowers:nth-child(4) {
+            top: 100px;
+            left: 300px;
+            animation-duration: 9s;
+        }
+
+        /* New flower */
+        .flowers:nth-child(5) {
+            top: 200px;
+            left: 100px;
+            animation-duration: 7s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(600px, -600px); }
+        }
+
+        /* Cake image */
+        .cake {
+            width: 100px;
+            height: 100px;
+            background-image: url('https://cdn.pixabay.com/photo/2017/05/19/20/38/cake-2325486_960_720.jpg');
+            background-size: cover;
+            position: absolute;
+            bottom: -30px;
+            right: 10px;
+            animation: cakeBounce 6s infinite alternate;
+        }
+
+        @keyframes cakeBounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Flowers and Cake Images -->
+    <div class="flowers"></div>
+    <div class="flowers"></div>
+    <div class="flowers"></div>
+    <div class="flowers"></div> <!-- New flower added -->
+    <div class="flowers"></div> <!-- Another flower added -->
+    <div class="cake"></div>
+
+    <!-- Main Card -->
+    <div class="card">
+        <h1>Happy New Year, Meri Pasndida Aurat!</h1>
+        <p>
+            As the new year begins, I just want to remind you how deeply I care for you. 
+            You are my happiness, my love, and my inspiration. Every moment spent with you 
+            is a gift I cherish, and I can't wait to create more beautiful memories together.
+        </p>
+        <p>
+            May this year bring us even closer, fill our hearts with joy, and light up our lives 
+            with endless love. Here's to new beginnings, more laughter, and a love that grows stronger 
+            with each passing day.
+        </p>
+        <p class="heart">❤️</p>
+        <button class="btn" onclick="changeMessage()">Make a Wish!</button>
+    </div>
+
+    <script>
+        function changeMessage() {
+            const message = document.querySelector('.card p');
+            message.innerHTML = "May our love grow brighter with every sunrise. Here's to the most beautiful year yet!";
+            document.querySelector('.heart').innerHTML = "💖";
+        }
+    </script>
+
+</body>
+</html>
